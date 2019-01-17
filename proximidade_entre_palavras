@@ -1,0 +1,18 @@
+def proximidade(char,comper):
+    lista_retorno_proximidade = list()
+    for c in char:
+        minimo = list()
+        minimo.append([i-c for i in comper])
+        
+        i = max(minimo[0])
+        #i = float("inf")
+        
+        for nr in minimo[0]:
+            if nr < i and nr > 0:
+                i = nr
+
+        menor_valor = minimo[0].index(i)
+        proximos = (c,menor_valor)
+        lista_retorno_proximidade.append(proximos)
+
+    return lista_retorno_proximidade
