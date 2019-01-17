@@ -1,6 +1,6 @@
 def proximidade(char,comper):
     lista_retorno_proximidade = list()
-    for c in char:
+    for idx,c in enumerate(char):
         minimo = list()
         minimo.append([i-c for i in comper])
         
@@ -12,7 +12,7 @@ def proximidade(char,comper):
                 i = nr
 
         menor_valor = minimo[0].index(i)
-        proximos = (c,menor_valor)
+        proximos = (idx,menor_valor)
         lista_retorno_proximidade.append(proximos)
 
     return lista_retorno_proximidade
